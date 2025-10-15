@@ -7,7 +7,13 @@ public class GameOverMenu : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("MainScene"); // replace with your actual game scene name
+        SceneManager.LoadScene("FinalGameScene"); // replace with your actual game scene name
+    }
+
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
