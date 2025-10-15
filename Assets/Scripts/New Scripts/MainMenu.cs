@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private string gameSceneName = "GameScene"; // rename to your actual game scene name
+    [SerializeField] private string gameSceneName = "FinalGameScene"; // rename to your actual game scene name
 
     public void PlayGame()
     {
