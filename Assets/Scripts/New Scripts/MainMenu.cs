@@ -5,30 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private string gameSceneName = "FinalGameScene"; // rename to your actual game scene name
+    [Header("Menu Panels")]
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject instructionsPanel;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(gameSceneName);
+        // Replace with the name of your actual game scene
+        SceneManager.LoadScene("FinalGameScene");
+    }
+
+    public void OpenInstructions()
+    {
+        mainMenuPanel.SetActive(false);
+        instructionsPanel.SetActive(true);
+    }
+
+    public void BackToMenu()
+    {
+        instructionsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // stop play mode in editor
-#else
-        Application.Quit(); // quit build
-#endif
-    }
-
-    public void OpenInstructions(GameObject instructionsPanel)
-    {
-        instructionsPanel.SetActive(true);
-    }
-
-    public void CloseInstructions(GameObject instructionsPanel)
-    {
-        instructionsPanel.SetActive(false);
+        Application.Quit();
+        Debug.Log("Game quit! (This only shows in the editor)");
     }
 }
-
