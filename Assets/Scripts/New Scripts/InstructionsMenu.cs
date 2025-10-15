@@ -1,21 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Or TMPro if using TextMeshPro
 
 public class InstructionsMenu : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsPanel;
+    [SerializeField] private GameObject hintPanel;
+
+    void Start()
+    {
+        // Make sure starting state is correct
+        instructionsPanel.SetActive(false);
+        hintPanel.SetActive(true);
+    }
 
     void Update()
     {
-        // Detect ? key (Shift + / on most keyboards)
+        // Detect ? key (Shift + /)
         if (Input.GetKeyDown(KeyCode.Slash))
         {
-            // Toggle visibility
-            bool isActive = instructionsPanel.activeSelf;
-            instructionsPanel.SetActive(!isActive);
+            bool showingInstructions = !instructionsPanel.activeSelf;
+
+            // Toggle panels
+            instructionsPanel.SetActive(showingInstructions);
+            hintPanel.SetActive(!showingInstructions);
         }
     }
 }
-
