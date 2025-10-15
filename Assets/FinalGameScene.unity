@@ -39417,8 +39417,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
-  walkPointRange: 15
-  sightRange: 20
+  walkPointRange: 50
+  sightRange: 50
 --- !u!136 &1067968382
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47336,7 +47336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 231.01
+      value: 229.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -47344,7 +47344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 239.54
+      value: 144.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalRotation.w
