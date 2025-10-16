@@ -39478,16 +39478,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8954da2afb15c614fae656bc39268515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1067968383}
+  detectionRadius: 10
+  roamRadius: 15
+  attackRange: 2
+  timeBetweenRoams: 5
   player: {fileID: 1294727434}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  walkPointRange: 50
-  sightRange: 50
+  gameOverSceneName: GameOverScene
 --- !u!136 &1067968382
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39538,6 +39534,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
   m_PrefabInstance: {fileID: 1280825408}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1067968385
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067968380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 061398ebccfe4bb4a91979777a5e58ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1068647437
 GameObject:
   m_ObjectHideFlags: 0
@@ -47410,7 +47427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 222.8
+      value: 227.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -47418,7 +47435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 156.5
+      value: 205.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47476,6 +47493,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1067968381}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1067968385}
   m_SourcePrefab: {fileID: 100100000, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
 --- !u!1 &1286141686
 GameObject:
