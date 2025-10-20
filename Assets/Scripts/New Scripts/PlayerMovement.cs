@@ -108,8 +108,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Optional: for debugging stamina
-    void OnGUI()
+  /*  void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 200, 30), "Stamina: " + Mathf.Round(currentStamina * 100f) / 100f);
-    }
+    } */
 }
