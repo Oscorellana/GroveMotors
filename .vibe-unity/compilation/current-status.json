@@ -1,0 +1,11 @@
+{
+    "status": "success",
+    "errors": 0,
+    "warnings": 1,
+    "timestamp": 1774914265923,
+    "projectHash": "0E4579F8",
+    "unityVersion": "6000.2.10f1",
+    "details": [
+        "[Assets/GreenForest/PostProcessing/Runtime/Components/MotionBlurComponent.cs:350:60] WARNING: Assets\\GreenForest\\PostProcessing\\Runtime\\Components\\MotionBlurComponent.cs(350,60): warning CS0618: 'GraphicsDeviceType.OpenGLES2' is obsolete: 'OpenGL ES 2.0 is no longer supported in Unity 2023.1'"
+    ]
+}
