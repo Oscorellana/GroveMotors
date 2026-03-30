@@ -1,33 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
+/// <summary>
+/// Countdown timer that displays remaining time in MM:SS format.
+/// Activates <see cref="gameOverText"/> when time reaches zero.
+/// </summary>
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
-    public TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float remainingTime;
+    [SerializeField] private TextMeshProUGUI gameOverText;
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (remainingTime > 0)
+        if (remainingTime > 0f)
         {
             remainingTime -= Time.deltaTime;
+
+            if (remainingTime <= 0f)
+            {
+                remainingTime = 0f;
+                gameOverText.gameObject.SetActive(true);
+            }
         }
-        else if (remainingTime < 0)
-        {
-            remainingTime = 0;
-            gameOverText.gameObject.SetActive(true);
 
-
-
-        }
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
+        int minutes = Mathf.FloorToInt(remainingTime / 60f);
+        int seconds = Mathf.FloorToInt(remainingTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

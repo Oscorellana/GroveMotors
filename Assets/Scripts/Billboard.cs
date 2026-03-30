@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Makes this GameObject always face the main camera on the Y-axis (useful for NPC sprites and world-space UI).
+/// </summary>
 public class Billboard : MonoBehaviour
 {
-
     private Transform cameraTransform;
 
-    // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.LookAt(cameraTransform);
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
     }
 }

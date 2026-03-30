@@ -1,85 +1,80 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Proximity-triggered typewriter dialogue system.
+/// The player presses F inside the trigger collider to open or close the dialogue panel.
+/// </summary>
 public class NPCSystem : MonoBehaviour
 {
+    [Header("UI References")]
     public GameObject dialoguePanel;
     public TextMeshProUGUI dialogueText;
+
+    [Header("Dialogue")]
     public string[] dialogue;
+    public float wordSpeed = 0.05f;
+
     private int index;
+    private bool playerIsClose;
 
-   // public GameObject contButton;
-    public float wordSpeed;
-    public bool playerIsClose;
-
-
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && playerIsClose)
+        if (!playerIsClose) return;
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (dialoguePanel.activeInHierarchy)
-            {
-                zeroText();
-            }
+                ResetDialogue();
             else
-            {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
-            }
-        }
-
-        if(dialogueText.text == dialogue[index])
-        {
-          //  contButton.SetActive(true);
+                OpenDialogue();
         }
     }
 
-    public void zeroText()
+    /// <summary>Opens the dialogue panel and starts typing the first line.</summary>
+    public void OpenDialogue()
+    {
+        dialoguePanel.SetActive(true);
+        StartCoroutine(TypeLine());
+    }
+
+    /// <summary>Advances to the next dialogue line, or closes the panel at the end.</summary>
+    public void NextLine()
+    {
+        if (index < dialogue.Length - 1)
+        {
+            index++;
+            dialogueText.text = "";
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            ResetDialogue();
+        }
+    }
+
+    /// <summary>Clears text, resets the index, and hides the dialogue panel.</summary>
+    public void ResetDialogue()
     {
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
 
-
-    IEnumerator Typing()
+    private IEnumerator TypeLine()
     {
-        foreach (char letter in dialogue[index].ToCharArray())
+        foreach (char letter in dialogue[index])
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(wordSpeed);
         }
     }
 
-
-    public void NextLine()
-    {
-        //contButton.SetActive(false);
-
-        if (index < dialogue.Length - 1)
-        {
-            index++;
-            dialogueText.text = "";
-            StartCoroutine(Typing());
-        }
-        else
-        {
-            zeroText();
-        }
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
+        if (other.CompareTag("Player"))
             playerIsClose = true;
-        }
-
     }
 
     private void OnTriggerExit(Collider other)
@@ -87,8 +82,7 @@ public class NPCSystem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
-            zeroText();
+            ResetDialogue();
         }
-
     }
 }
