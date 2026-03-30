@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Raycast-based item pickup. Press E while looking at a pickup object within range
 /// to add it to the inventory. Object names must end with " PICKUP" (e.g. "Key PICKUP").
+/// Shows a pickup prompt UI when a valid pickup is in range and in view.
 /// </summary>
 public class PickupClass : MonoBehaviour
 {
@@ -14,10 +15,36 @@ public class PickupClass : MonoBehaviour
     [SerializeField] private float pickupRange = 3f;
     [SerializeField] private InventorySystem inventorySystem;
 
+    [Header("Pickup Prompt")]
+    [SerializeField] private GameObject pickupPrompt;
+
     void Update()
     {
+        UpdatePromptVisibility();
+
         if (Input.GetKeyDown(KeyCode.E))
             TryPickup();
+    }
+
+    /// <summary>Shows the pickup prompt when a valid pickup object is in the crosshair.</summary>
+    private void UpdatePromptVisibility()
+    {
+        if (pickupPrompt == null) return;
+
+        bool show = IsLookingAtPickup();
+        if (pickupPrompt.activeSelf != show)
+            pickupPrompt.SetActive(show);
+    }
+
+    private bool IsLookingAtPickup()
+    {
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+
+        if (!Physics.Raycast(ray, out RaycastHit hitInfo, pickupRange, pickupLayer))
+            return false;
+
+        string itemName = hitInfo.collider.gameObject.name.Replace(PickupSuffix, "").Trim();
+        return !string.IsNullOrEmpty(itemName) && itemName != FlashlightName;
     }
 
     private void TryPickup()
