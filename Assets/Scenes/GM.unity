@@ -83363,7 +83363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   playerCamera: {fileID: 628024598}
   pickupRange: 3
   inventorySystem: {fileID: 1884361854}
@@ -94390,9 +94390,9 @@ SceneRoots:
   - {fileID: 1503070159}
   - {fileID: 1884361858}
   - {fileID: 2016498901}
-  - {fileID: 1955209823}
   - {fileID: 456449580}
   - {fileID: 661938061}
   - {fileID: 382918950}
   - {fileID: 338632938}
   - {fileID: 1618064325}
+  - {fileID: 1955209823}
