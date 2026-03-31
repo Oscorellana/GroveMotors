@@ -29952,6 +29952,7 @@ GameObject:
   - component: {fileID: 628024598}
   - component: {fileID: 628024600}
   - component: {fileID: 628024599}
+  - component: {fileID: 628024602}
   m_Layer: 0
   m_Name: PlayerCam
   m_TagString: MainCamera
@@ -30048,6 +30049,23 @@ Transform:
   - {fileID: 766973730}
   m_Father: {fileID: 1884361858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &628024602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628024597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9453e38df5918eb449e3e6652e976a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaticNoiseEffect
+  monster: {fileID: 1401329474}
+  startDistance: 15
+  fullIntensityDistance: 3
+  maxIntensity: 0.85
+  smoothSpeed: 3
 --- !u!1 &630516533
 GameObject:
   m_ObjectHideFlags: 0
