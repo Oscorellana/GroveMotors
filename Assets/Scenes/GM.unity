@@ -8329,6 +8329,7 @@ GameObject:
   - component: {fileID: 196484276}
   - component: {fileID: 196484275}
   - component: {fileID: 196484274}
+  - component: {fileID: 196484279}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -8479,6 +8480,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &196484279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196484272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3895c4dfe7a34ae408586b615bdb0bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackTrigger
+  playerTag: Player
+  attackDelay: 0.5
+  gameOverSceneName: GameOver
 --- !u!1 &199114722
 GameObject:
   m_ObjectHideFlags: 0
@@ -64070,7 +64086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4103964211065237156, guid: 5eb9ed448e64dd14cbcde3373933907e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
