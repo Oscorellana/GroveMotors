@@ -8378,6 +8378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   target: {fileID: 1884361858}
+  flashlight: {fileID: 0}
 --- !u!65 &196484276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64128,6 +64129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   target: {fileID: 1884361858}
+  flashlight: {fileID: 358030910}
 --- !u!1001 &1401730210
 PrefabInstance:
   m_ObjectHideFlags: 0
