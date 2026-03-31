@@ -8394,7 +8394,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 4.6571865, y: 2.6911821, z: 6.3352666}
@@ -63199,6 +63199,7 @@ MonoBehaviour:
     consumeItem: 0
     onlyActivateOnce: 1
     hasActivated: 0
+  loadWinSceneWhenComplete: 1
 --- !u!65 &1389544553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83691,7 +83692,7 @@ MonoBehaviour:
   cursorLock: 1
   mouseSensitivity: 2.8
   walkSpeed: 6
-  sprintSpeed: 9
+  sprintSpeed: 10
   gravity: -30
   groundCheck: {fileID: 684335880}
   ground:

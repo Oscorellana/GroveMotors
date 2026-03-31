@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
-    private const string GameSceneName = "FinalGameScene";
+    private const string GameSceneName = "GM";
 
     [Header("Menu Panels")]
     [SerializeField] private GameObject mainMenuPanel;

@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Handles Game Over screen button actions: restart, return to main menu, and quit.
+/// Handles Win screen button actions: restart game, return to main menu, and quit.
 /// </summary>
-public class GameOverMenu : MonoBehaviour
+public class WinMenu : MonoBehaviour
 {
     private const string GameSceneName = "GM";
     private const string MainMenuSceneName = "MainMenu";

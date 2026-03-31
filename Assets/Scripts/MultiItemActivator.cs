@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Collider))]
 public class MultiItemActivator : MonoBehaviour
@@ -15,8 +16,14 @@ public class MultiItemActivator : MonoBehaviour
         [HideInInspector] public bool hasActivated = false;
     }
 
+    private const string WinSceneName = "WinScene";
+
     [Header("Setup")]
     public ItemActivation[] itemActivations; // assign all item-object pairs here
+
+    [Header("Win Condition")]
+    [Tooltip("When all items have been placed, load the win scene. Requires every ItemActivation to have onlyActivateOnce enabled.")]
+    public bool loadWinSceneWhenComplete = true;
 
     private bool playerInRange = false;
     private InventorySystem playerInventory;
@@ -90,10 +97,28 @@ public class MultiItemActivator : MonoBehaviour
                 }
 
                 act.hasActivated = true;
+
+                if (loadWinSceneWhenComplete && AreAllItemsPlaced())
+                {
+                    Debug.Log("All items placed! Loading win scene.");
+                    SceneManager.LoadScene(WinSceneName);
+                }
+
                 return;
             }
         }
 
         Debug.Log($"No matching activation for {heldItem} in this trigger.");
+    }
+
+    /// <summary>Returns true when every ItemActivation entry has been activated.</summary>
+    private bool AreAllItemsPlaced()
+    {
+        foreach (ItemActivation act in itemActivations)
+        {
+            if (!act.hasActivated)
+                return false;
+        }
+        return true;
     }
 }
