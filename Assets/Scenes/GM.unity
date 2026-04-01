@@ -25588,6 +25588,7 @@ GameObject:
   - component: {fileID: 519437165}
   - component: {fileID: 519437164}
   - component: {fileID: 519437163}
+  - component: {fileID: 519437167}
   m_Layer: 6
   m_Name: Gas Tank PICKUP
   m_TagString: Untagged
@@ -25715,6 +25716,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519437161}
   m_Mesh: {fileID: -7706115144952327212, guid: 9d6d96102ba85d94fb8e315c0e74b540, type: 3}
+--- !u!114 &519437167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519437161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af21706a096363a4eb918bd1b4fe3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupGlow
+  glowColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  pulseSpeed: 2
+  minIntensity: 0.2
+  maxIntensity: 1.5
 --- !u!1 &519829769
 GameObject:
   m_ObjectHideFlags: 0
@@ -35796,6 +35813,7 @@ GameObject:
   - component: {fileID: 741035306}
   - component: {fileID: 741035305}
   - component: {fileID: 741035304}
+  - component: {fileID: 741035308}
   m_Layer: 6
   m_Name: Engine PICKUP
   m_TagString: Untagged
@@ -35924,6 +35942,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741035302}
   m_Mesh: {fileID: -1318119709532676425, guid: 9d6d96102ba85d94fb8e315c0e74b540, type: 3}
+--- !u!114 &741035308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741035302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af21706a096363a4eb918bd1b4fe3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupGlow
+  glowColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  pulseSpeed: 2
+  minIntensity: 0.2
+  maxIntensity: 1.5
 --- !u!1 &742081947
 GameObject:
   m_ObjectHideFlags: 0
@@ -38632,6 +38666,7 @@ GameObject:
   - component: {fileID: 807622397}
   - component: {fileID: 807622396}
   - component: {fileID: 807622395}
+  - component: {fileID: 807622399}
   m_Layer: 6
   m_Name: Back Wheel PICKUP
   m_TagString: Untagged
@@ -38821,6 +38856,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807622393}
   m_Mesh: {fileID: 3459533975586295541, guid: 9d6d96102ba85d94fb8e315c0e74b540, type: 3}
+--- !u!114 &807622399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807622393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af21706a096363a4eb918bd1b4fe3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupGlow
+  glowColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  pulseSpeed: 2
+  minIntensity: 0.2
+  maxIntensity: 1.5
 --- !u!1001 &808058606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41251,6 +41302,7 @@ GameObject:
   - component: {fileID: 871992735}
   - component: {fileID: 871992734}
   - component: {fileID: 871992733}
+  - component: {fileID: 871992737}
   m_Layer: 6
   m_Name: Headlight PICKUP
   m_TagString: Untagged
@@ -41378,6 +41430,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871992731}
   m_Mesh: {fileID: -8793600128357336897, guid: 9d6d96102ba85d94fb8e315c0e74b540, type: 3}
+--- !u!114 &871992737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871992731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af21706a096363a4eb918bd1b4fe3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupGlow
+  glowColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  pulseSpeed: 2
+  minIntensity: 0.2
+  maxIntensity: 1.5
 --- !u!1 &872199719
 GameObject:
   m_ObjectHideFlags: 0
@@ -85629,6 +85697,7 @@ GameObject:
   - component: {fileID: 1858535270}
   - component: {fileID: 1858535269}
   - component: {fileID: 1858535268}
+  - component: {fileID: 1858535272}
   m_Layer: 6
   m_Name: Front Wheel PICKUP
   m_TagString: Untagged
@@ -85817,6 +85886,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858535266}
   m_Mesh: {fileID: 7391211071525590566, guid: 9d6d96102ba85d94fb8e315c0e74b540, type: 3}
+--- !u!114 &1858535272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858535266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af21706a096363a4eb918bd1b4fe3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupGlow
+  glowColor: {r: 1, g: 0.85, b: 0.1, a: 1}
+  pulseSpeed: 2
+  minIntensity: 0.2
+  maxIntensity: 1.5
 --- !u!1001 &1860309669
 PrefabInstance:
   m_ObjectHideFlags: 0
